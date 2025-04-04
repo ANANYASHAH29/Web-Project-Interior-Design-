@@ -1,0 +1,54 @@
+/* 🔹 Fullscreen Layout */
+html, body, #root, .app-container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrolling */
+  background-color: #001f3f; /* Matches canvas background */
+}
+h2{
+  color:white;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+/* 🔹 Floor Selection Bar (Fix it at the top) */
+.floor-selection-bar {
+  position: absolute; /* Fix at top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Fixed height */
+  display: flex;
+  justify-content: center;  /* Centers images */
+  align-items: center;
+  gap: 12px;  /* Space between images */
+  background-color: #1a1a1a; /* Dark background */
+  border-bottom: 3px solid #444; /* Subtle separator */
+  z-index: 10; /* Ensure it's above the canvas */
+}
+
+/* 🔹 Floor Images */
+.floor-selection-bar img {
+  width: 64px;
+  height: 64px;
+  border: 3px solid white;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* 🔹 Hover Effect */
+.floor-selection-bar img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.5);
+}
+
+/* 🔹 3D Model Viewer (Full screen except bar) */
+.canvas-container {
+  position: absolute;
+  top: 80px; /* Push below selection bar */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 80px); /* Take remaining height */
+}
