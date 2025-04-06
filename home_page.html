@@ -50,7 +50,9 @@
             
             <b>"Design is not decoration - it is integration."</b></p>
     </section>
-
+    
+    
+    
     <!-- How We Work Section with 3D Model -->
     <section id="walkthrough">
         <h2>How We Work</h2>
@@ -70,9 +72,12 @@
     </section>
 
     <!-- Typing Tagline -->
-    <section class="tagline">
-        <h2 id="typing-text"></h2>
-    </section>
+    <div id="typewriter-container">
+        <span id="typewriter-text"></span>
+            
+        <span id="cursor">|</span>
+        
+    </div>
 
     <!-- Contact Form -->
     <section id="contact">
@@ -121,9 +126,48 @@
     <script defer src="script.js"></script>
 </head>
 
-   
-   
 
+
+<script>
+    // Typewriter Effect Script
+    const el = document.getElementById("typewriter-text");
+    const cursor = document.getElementById("cursor");
+    const phrases = ["Plot Twist: Your Story Starts Here!", "More Than Just Rooms – We Create Stories!","Design That Makes Your Space Smarter!", "Because Who Said Style Can’t Be Brainy?","Crafting Cool, One Room at a Time!","Your Space, Reinvented, Reimagined, Rebooted!"];  // Array of words to type
+    let curPhraseIndex = 0;
+    let sleepTime = 50;  // Speed of typing
+
+    // Function to add a delay (sleep)
+    function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    // Function for writing and deleting text in a typewriter effect
+    const writeLoop = async () => {
+        while (true) {
+            let curWord = phrases[curPhraseIndex];
+
+            // Typing letters
+            for (let i = 0; i <= curWord.length; i++) {
+                el.innerText = curWord.substring(0, i);
+                await sleep(sleepTime);
+            }
+
+            await sleep(1000); // Pause after typing
+
+            // Deleting letters
+            for (let i = curWord.length; i >= 0; i--) {
+                el.innerText = curWord.substring(0, i);
+                await sleep(sleepTime / 2); // Slow down the deleting speed
+            }
+
+            curPhraseIndex = (curPhraseIndex + 1) % phrases.length;  // Move to the next phrase
+        }
+    };
+
+    // Run the typewriter effect
+    writeLoop();
+   
+</script>
 </body>
 
 </html>
