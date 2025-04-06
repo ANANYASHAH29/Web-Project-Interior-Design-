@@ -94,17 +94,58 @@ body {
   margin-top: 100px;
   z-index: -1;
 }
-.tagline-over-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 3rem;
-  font-weight: 600;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+
+
+ /* Typewriter effect container */
+ #typewriter-container {
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #333;
   text-align: center;
-  z-index:1;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background: url('https://www.transparenttextures.com/patterns/white-wall.png'); /* Subtle pattern */
+  background-color: #f9f5f0;  /* Beige-like soft tone */
+  text-align: center;
+  
+}
+
+#typewriter-text {
+  font-size: 30px;
+  color: #333; /* Dark grey color for a classy look */
+  font-family: 'Helvetica Neue', sans-serif; /* Elegant font */
+  margin-top: 20px;
+  letter-spacing: 1px;
+  animation: slideInText 2s ease-out;
+ /* Light translucent background */
+  padding: 15px 30px;
+  display: inline-block;
+  
+  backdrop-filter: blur(10px); /* Soft background blur for a sophisticated feel */
+}
+
+/* Cursor blinking effect */
+#cursor {
+  
+  color: #333; /* Dark grey cursor for consistency */
+  font-size: 30px; /* Increase the cursor size */
+  animation: blink 1s linear infinite;
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 10px;
+}
+
+@keyframes blink {
+  0% {
+      opacity: 100%;
+  }
+  50% {
+      opacity: 0%;
+  }
 }
 
 .slider {
