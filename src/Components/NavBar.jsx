@@ -3,7 +3,7 @@ function NavBar() {
     <nav>
       <div class="nav__logo">
         <img src="/logo.png" alt="Interior Logo" />
-        <a href="#">Space Integration</a>
+        <a href="#" class="brand">SPACE INTEGRATION</a>
       </div>
       <ul class="nav__links">
         <a href="/" class="link">Home</a>
